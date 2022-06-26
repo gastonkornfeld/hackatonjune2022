@@ -1,0 +1,32 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <%- include("../partials/head.ejs") %>
+    </head>
+</head>
+<body>
+    <header>
+        <%- include("../partials/navbar.ejs",{currentPage: "home"}) %>
+    </header>
+    <div>
+        <div class="posts m-auto">
+            <% teams.forEach(team=> { %>
+            <div class="card post my-4 text-center">
+                <h1></h1>
+              <div class="card-body">
+
+                <a href="./team/<%= team.team_id %>" class="card-title">Name: <%= team.team_name %></a>
+                <p class="card-text">League <%= team.team_country %></p>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    <footer>
+        <%- include("../partials/footer.ejs") %>
+    </footer>
+</body>
+</html>

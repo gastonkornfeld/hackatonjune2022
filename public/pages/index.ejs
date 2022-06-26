@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <%- include("../partials/head.ejs") %>
+    </head>
+</head>
+<body>
+    <header>
+        <%- include("../partials/navbar.ejs",{currentPage: "home"}) %>
+    </header>
+    <div class="center">
+        <h1>Hackaton June 2022</h1>
+    </div>
+    <div class="center">
+        <p>
+            In this app you will be able to save your favorites teams and players
+        </p>
+    </div>
+    <div class="forms-div">
+       <div>
+            <h2>Add a team</h2>
+            <form action="http://localhost:3000/add_team" method="POST">
+                team id: <input type="text" name="id" value="">
+                team name: <input type="text" name="name" value="">
+                country: <input type="text" name="country" value="">
+                description: <input type="text" name="description" value="">
+                logo url: <input type="text" name="logo" value="">
+                <input type="submit" name="" value="Submit">
+            </form>
+        </div>
+        <div>
+            <h2>Add a Player</h2>
+            <form action="http://localhost:3000/add_player" method="POST">
+                player id: <input type="number" name="id" value="">
+                Player name: <input type="text" name="name" value="">
+                Born in: <input type="date" name="born_date" value="">
+                rating <input type="number" name="rating" value="" min="1" max="10">
+                team id: <input type="number" name="team" value="">
+                <input type="submit" name="" value="Submit">
+            </form>
+        </div> 
+    </div>
+    
+    <footer>
+        <%- include("../partials/footer.ejs") %>
+    </footer>
+</body>
+</html>
